@@ -1,5 +1,5 @@
 <template>
-  <mu-appbar id="my-header">
+  <section id="my-header">
     <!--<mu-icon-button icon="menu" slot="left"/>-->
     <router-link to="/" class="logo">Logo</router-link>
 
@@ -38,10 +38,10 @@
       </mu-menu>
     </mu-popover>
 
-  </mu-appbar>
+  </section>
 </template>
 <script>
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 
 export default {
   data: () => ({
@@ -50,25 +50,25 @@ export default {
   }),
   computed: {
     ...mapState({
-      user: 'user'
+      user: "user"
     })
   },
   watch: {
-    user (val) {
+    user(val) {
       if (val) {
-        this.userMenuTrigger = this.$refs.userButton.$el
+        this.userMenuTrigger = this.$refs.userButton.$el;
       }
     }
   },
   methods: {
-    toggle () {
-      this.userMenuOpen = !this.userMenuOpen
+    toggle() {
+      this.userMenuOpen = !this.userMenuOpen;
     },
-    handleClose (e) {
-      this.userMenuOpen = false
+    handleClose(e) {
+      this.userMenuOpen = false;
     }
   }
-}
+};
 </script>
 <style lang="sass">
 #my-header
